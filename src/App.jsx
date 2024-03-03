@@ -8,15 +8,15 @@ function App() {
 
   return (
     <>
-      <div className="bg-gray-800 text-white py-4">
-        <nav className="container mx-auto flex justify-between">
+      <div className="fixed top-0 w-full z-50 bg-custom-purple-700 text-white py-4">
+        <nav className="container mx-auto flex justify-between px-4 md:px-0">
           <div>LeetStats</div>
           <div>{/* Navigation Links or Icons */}</div>
         </nav>
       </div>
 
       <div
-        className="h-screen flex flex-1 justify-center items-center bg-slate-400"
+        className="bg-custom-purple-100 h-screen flex flex-1 justify-center items-center"
         style={{ height: "calc(100vh - navbarHeight)" }}
       >
         <h1>Welcome to LeetStats</h1>
