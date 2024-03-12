@@ -18,7 +18,7 @@ function App() {
         className="bg-custom-purple-100 h-screen flex flex-1 flex-col justify-center items-center"
         style={{ height: "calc(100vh - navbarHeight)" }}
       >
-        <h1>Welcome to LeetStats</h1>
+        <h1>Welcome to Cheeseburger</h1>
       </div>
     </>
   );
