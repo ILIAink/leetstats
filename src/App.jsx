@@ -2,25 +2,22 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import "./Login.jsx"
+import Login from "./Login";
 
 function App() {
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div className="fixed top-0 w-full z-50 bg-custom-purple-700 text-white py-4">
-        <nav className="container mx-auto flex justify-between px-4 md:px-0">
-          <div>LeetStats</div>
-          <div>{/* Navigation Links or Icons */}</div>
-        </nav>
-      </div>
-
       <div
-        className="bg-custom-purple-100 h-screen flex flex-1 flex-col justify-center items-center"
+        className="bg-custom-purple-100 h-screen flex flex-1 justify-center items-center"
         style={{ height: "calc(100vh - navbarHeight)" }}
       >
-        <h1>Welcome to Cheeseburger</h1>
-        <h5>pushed to merge</h5>
+
+      <Login />
       </div>
+
     </>
   );
 }
