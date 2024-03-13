@@ -1,5 +1,56 @@
 import React from "react";
 import { ReactDOM } from "react";
+import axios, { Axios } from "axios";
+
+// Define the GraphQL query and variables
+const graphqlQuery = {
+  query: `
+    query userProblemsSolved($username: String!) {
+      allQuestionsCount {
+        difficulty
+        count
+      }
+      matchedUser(username: $username) {
+        problemsSolvedBeatsStats {
+          difficulty
+          percentage
+        }
+        submitStatsGlobal {
+          acSubmissionNum {
+            difficulty
+            count
+          }
+        }
+      }
+    }
+  `,
+  variables: {
+    username: "yourUsernameHere" // Replace this with the actual username
+  }
+};
+
+// Define the URL for the GraphQL API
+const endpoint = 'leetcode.com'; // Replace this with the actual GraphQL endpoint
+
+// Function to make the POST request with Axios using async/await
+async function fetchGraphQLData() {
+  try {
+    const response = await axios.post(endpoint, graphqlQuery, {
+      headers: {
+        'Content-Type': 'application/json',
+        // Include any other headers required by the API (e.g., authorization)
+      }
+    });
+    // Handle the response data
+    console.log(response.data);
+  } catch (error) {
+    // Handle any errors
+    console.error(error);
+  }
+}
+
+// Call the function
+fetchGraphQLData();
 
 function Login()
 {
