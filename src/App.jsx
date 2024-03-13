@@ -2,8 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import "./Login.jsx"
-import Login from "./Login";
+import DataDisplay from "./DataDisplay.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +14,7 @@ function App() {
         style={{ height: "calc(100vh - navbarHeight)" }}
       >
 
-      <Login />
+      <DataDisplay />
       </div>
 
     </>
