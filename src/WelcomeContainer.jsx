@@ -44,7 +44,7 @@ function FormDislplay({onFormSubmit})
 
     return(
         <div>
-            <p1 className="font-medium">Country</p1>
+            <p1 className="font-medium">Country Code</p1>
                 <form className="pt-2" onSubmit={handleSubmit}>
                 <input 
                 type="text" 
