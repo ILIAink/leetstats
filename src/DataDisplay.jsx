@@ -6,8 +6,7 @@ import { useQuery, gql } from '@apollo/client';
 const GET_COUNTRIES = gql`
     query GetCountries
     {
-        name
-        states
+        country(code: "US")
         {
             name
         }
@@ -22,7 +21,7 @@ function ActualDataDisplay()
     if (error) return <p>Error : {error.message}</p>;
 
     return(
-        <p>{data}</p>
+        <p>data: {data.country.name}</p>
     );
 };
 
