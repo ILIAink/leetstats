@@ -17,9 +17,15 @@ function ActualDataDisplay({code, setCode})
 {
     console.log("Code: " + code)
 
-    const regex = new RegExp("[A-Z]")
+    const {loading, error, data} = useQuery(GET_COUNTRIES,
+        {variables: {code}});
     
-    if(code.length == 2 && regex.test(code))
+    if(code == "ERROR")
+    {
+        console.log("did not enter valid country code") 
+        return <p>did not enter valid country code</p>
+    }
+    else
     {
         const {loading, error, data} = useQuery(GET_COUNTRIES,
             {variables: {code}});
@@ -32,14 +38,10 @@ function ActualDataDisplay({code, setCode})
                 <button 
                 type="button"
                 onClick={console.log("this does not work if we try to setCode. bad rex, bad")}
-                className="bg-custom-purple-500 shadow-sm py-1 px-2 rounded">Go Back</button>
+                className="bg-custom-purple-500 shadow-sm m-2 py-1 px-2 rounded hover:py-2 px-4">Go Back</button>
             </div>
         );
         else return <p>Unknown Error. </p>;
-    }
-    else
-    {
-        return <p>did not enter valid country code</p>
     }
     
 };
@@ -59,7 +61,8 @@ function FormDisplay({onFormSubmit})
         }
         else
         {
-            onFormSubmit("");
+            console.log("did not enter valid country code") 
+            onFormSubmit("ERROR");
         }
       
     }
@@ -104,7 +107,7 @@ function WelcomeContainer()
 
             <div className="pt-1 shadow-md bg-custom-purple-200 border-1 rounded-md w-3/4 content-center m-auto">
                     <div className="pb-2 pt-1">
-                        {code ? <ActualDataDisplay code={code} setCode={setCode}/> :  <FormDisplay onFormSubmit={handleFormSubmit}/>}                      
+                        {code != ""  ? <ActualDataDisplay code={code} setCode={setCode}/> :  <FormDisplay onFormSubmit={handleFormSubmit}/>}                      
                     </div> 
             </div>
         </div>
