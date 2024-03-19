@@ -37,7 +37,8 @@ function ActualDataDisplay({code, setCode})
                 <p>data: {data.country.name}</p>
                 <button 
                 type="button"
-                onClick={console.log("this does not work if we try to setCode. bad rex, bad")}
+                //needs to be wrapped in func so that it's ran onClick, and not on rerender (lol)
+                onClick={() => {setCode("")}}
                 className="bg-custom-purple-500 shadow-sm m-2 py-1 px-2 rounded hover:py-2 px-4">Go Back</button>
             </div>
         );
