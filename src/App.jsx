@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import WelcomeContainer from "./WelcomeContainer.jsx";
 import { getStats, getPublicProfile } from "./api/api.js";
+import Navbar from "./components/Navbar.jsx";
 
 // will change once deployed
 const ENDPOINT = "http://localhost:3000";
